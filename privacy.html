@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隐私政策 - 游刃</title>
+<style>
+:root {
+--primary: #165dff;
+--bg: #f8f9fa;
+--surface: #ffffff;
+--text: #1d2129;
+--text-secondary: #4e5969;
+--border: #e5e6eb;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+background: var(--bg);
+color: var(--text);
+line-height: 1.8;
+}
+
+.navbar {
+background: var(--surface);
+border-bottom: 1px solid var(--border);
+padding: 0 24px;
+}
+
+.nav-container {
+max-width: 800px;
+margin: 0 auto;
+display: flex;
+align-items: center;
+height: 64px;
+}
+
+.logo {
+display: flex;
+align-items: center;
+gap: 10px;
+text-decoration: none;
+color: var(--text);
+font-weight: 700;
+font-size: 18px;
+}
+
+.content {
+max-width: 800px;
+margin: 0 auto;
+padding: 40px 24px;
+background: var(--surface);
+margin-top: 20px;
+margin-bottom: 40px;
+border-radius: 12px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+h1 {
+font-size: 28px;
+margin-bottom: 8px;
+}
+
+.update-date {
+color: var(--text-secondary);
+font-size: 14px;
+margin-bottom: 32px;
+}
+
+h2 {
+font-size: 20px;
+margin: 32px 0 16px;
+padding-bottom: 8px;
+border-bottom: 1px solid var(--border);
+}
+
+p {
+margin-bottom: 16px;
+color: var(--text-secondary);
+}
+
+ul {
+margin: 16px 0;
+padding-left: 24px;
+color: var(--text-secondary);
+}
+
+li {
+margin-bottom: 8px;
+}
+
+strong {
+color: var(--text);
+}
+
+.footer {
+text-align: center;
+padding: 24px;
+color: var(--text-secondary);
+font-size: 14px;
+}
+
+.footer a {
+color: var(--primary);
+text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+<div class="nav-container">
+<a href="index.html" class="logo">
+<span>🛡️</span>
+<span>游刃</span>
+</a>
+</div>
+</nav>
+
+<div class="content">
+<h1>隐私政策</h1>
+<div class="update-date">最后更新时间：2026年5月13日</div>
+
+<h2>概述</h2>
+<p><strong>游刃</strong>（以下简称"本应用"）是一款完全本地化的密码管理工具。我们深知隐私的重要性，因此本应用的设计原则是：<strong>您的数据永远不会离开您的设备</strong>。</p>
+
+<h2>数据收集</h2>
+<p><strong>本应用不收集任何用户数据。</strong></p>
+<ul>
+<li>本应用<strong>不联网</strong>，所有数据仅存储在您的本地设备上</li>
+<li>本应用<strong>不收集</strong>您的密码、用户名、网站地址等任何信息</li>
+<li>本应用<strong>不收集</strong>您的设备信息、使用习惯或个人身份信息</li>
+<li>本应用<strong>不使用</strong>任何分析工具、广告 SDK 或追踪器</li>
+</ul>
+<p>您输入的所有数据仅保存在浏览器的本地存储（localStorage）中，仅存在于您的设备上。</p>
+
+<h2>数据安全</h2>
+<p>本应用采用多层安全措施保护您的数据：</p>
+<ul>
+<li><strong>主密码哈希</strong>：使用 PBKDF2 算法（100,000 次迭代）加密存储，不保存明文密码</li>
+<li><strong>数据加密</strong>：所有密码数据使用 AES-256-GCM 算法加密存储</li>
+<li><strong>会话管理</strong>：支持自动锁屏，防止他人访问</li>
+<li><strong>剪贴板保护</strong>：复制密码后 30 秒自动清除</li>
+</ul>
+<p>即使有人获取了您的设备，也无法直接读取您的密码数据。</p>
+
+<h2>数据备份与恢复</h2>
+<ul>
+<li>您可以通过<strong>导出功能</strong>将密码数据备份为 CSV 文件</li>
+<li>导出的文件保存在您选择的位置，我们不会访问或存储这些文件</li>
+<li><strong>请注意妥善保管您的备份文件</strong>，因为本应用无法恢复丢失的数据</li>
+<li>如果您忘记主密码，只能通过重置功能清除所有数据后重新开始</li>
+</ul>
+
+<h2>第三方服务</h2>
+<p>本应用<strong>不连接任何第三方服务</strong>，包括但不限于：</p>
+<ul>
+<li>不使用云存储服务</li>
+<li>不使用分析或统计服务</li>
+<li>不使用广告或推广服务</li>
+<li>不使用社交媒体登录</li>
+</ul>
+<p>唯一的外部依赖是 Tesseract.js OCR 库（用于截图识别功能），该库通过 CDN 加载，仅在您使用截图识别时临时加载，不会传输您的任何数据。</p>
+
+<h2>儿童隐私</h2>
+<p>本应用不针对 13 岁以下儿童。我们不会有意收集 13 岁以下儿童的个人信息。</p>
+
+<h2>隐私政策更新</h2>
+<p>我们可能会不定期更新本隐私政策。更新后的隐私政策将在应用内发布，并更新"最后更新时间"。建议您定期查看本页面以了解最新信息。</p>
+
+<h2>联系我们</h2>
+<p>如果您对本隐私政策有任何疑问，请通过以下方式联系我们：</p>
+<ul>
+<li><strong>开发者：</strong>肖恩沃尔特</li>
+<li><strong>GitHub：</strong><a href="https://github.com/Dream22180971/YouRenTool" target="_blank">YouRenTool</a></li>
+<li><strong>邮箱：</strong>请通过 GitHub Issues 联系</li>
+</ul>
+</div>
+
+<div class="footer">
+<p>© 2026 游刃 YouRenTool | <a href="index.html">返回首页</a></p>
+</div>
+
+</body>
+</html>
