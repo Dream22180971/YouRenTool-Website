@@ -660,19 +660,24 @@ showSlide(currentSlide);
 }, 5000);
 
 // 下载统计
-function getDownloadCount() {
-return parseInt(localStorage.getItem('youren_download_count') || '0');
+async function fetchDownloadCount() {
+try {
+const res = await fetch('/api/count');
+const data = await res.json();
+document.getElementById('downloadCount').textContent = data.count;
+} catch {
+document.getElementById('downloadCount').textContent = '0';
+}
 }
 
 function trackDownload() {
-let count = getDownloadCount();
-count++;
-localStorage.setItem('youren_download_count', count);
-document.getElementById('downloadCount').textContent = count;
+fetch('/api/count', { method: 'POST' }).then(res => res.json()).then(data => {
+document.getElementById('downloadCount').textContent = data.count;
+}).catch(() => {});
 }
 
 // 初始化显示下载次数
-document.getElementById('downloadCount').textContent = getDownloadCount();
+fetchDownloadCount();
 
 // 平滑滚动
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
