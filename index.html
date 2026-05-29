@@ -83,6 +83,30 @@ transition: color 0.2s;
 color: var(--primary);
 }
 
+/* 语言切换按钮 */
+.lang-switch {
+display: flex;
+align-items: center;
+gap: 4px;
+padding: 6px 12px;
+border-radius: 6px;
+background: var(--bg);
+border: 1px solid var(--border);
+cursor: pointer;
+font-size: 14px;
+color: var(--text-secondary);
+transition: all 0.2s;
+}
+
+.lang-switch:hover {
+border-color: var(--primary);
+color: var(--primary);
+}
+
+.lang-switch .lang-icon {
+font-size: 16px;
+}
+
 /* Hero 区域 */
 .hero {
 min-height: 100vh;
@@ -445,30 +469,34 @@ grid-template-columns: 1fr;
 <span>游刃</span>
 </a>
 <div class="nav-links">
-<a href="#screenshots">应用界面</a>
-<a href="#features">功能特性</a>
-<a href="#security">安全保障</a>
-<a href="#download">下载</a>
-<a href="donate.html">支持我们</a>
-<a href="#contact">联系作者</a>
+<a href="#screenshots" data-i18n="nav.screenshots">应用界面</a>
+<a href="#features" data-i18n="nav.features">功能特性</a>
+<a href="#security" data-i18n="nav.security">安全保障</a>
+<a href="#download" data-i18n="nav.download">下载</a>
+<a href="donate.html" data-i18n="nav.donate">支持我们</a>
+<a href="#contact" data-i18n="nav.contact">联系作者</a>
 </div>
+<button class="lang-switch" id="langSwitch" onclick="toggleLang()">
+<span class="lang-icon">🌐</span>
+<span id="langText">EN</span>
+</button>
 </div>
 </nav>
 
 <!-- Hero 区域 -->
 <section class="hero">
 <div class="hero-content">
-<h1>游刃 - 本地密码管家</h1>
-<p>数据完全离线存储，不依赖云端。采用 AES-256 加密，保护您的每一个密码。</p>
+<h1 data-i18n="hero.title">游刃 - 本地密码管家</h1>
+<p data-i18n="hero.subtitle">数据完全离线存储，不依赖云端。采用 AES-256 加密，保护您的每一个密码。</p>
 <div class="hero-buttons">
-<a href="#download" class="btn btn-primary">
+<a href="#download" class="btn btn-primary" data-i18n="hero.downloadBtn">
 📥 下载 Windows 版
 </a>
-<a href="https://github.com/Dream22180971/YouRenTool" target="_blank" class="btn btn-secondary">
+<a href="https://github.com/Dream22180971/YouRenTool" target="_blank" class="btn btn-secondary" data-i18n="hero.sourceBtn">
 📦 查看源码
 </a>
 </div>
-<div class="download-info">
+<div class="download-info" data-i18n="hero.info">
 支持 Windows 10+ | 当前版本 v1.1.0 | 文件大小约 5MB
 </div>
 </div>
@@ -476,8 +504,8 @@ grid-template-columns: 1fr;
 
 <!-- 截图展示 -->
 <section class="screenshot-section" id="screenshots">
-<h2 class="section-title">应用界面</h2>
-<p class="section-subtitle">简洁直观的密码管理体验</p>
+<h2 class="section-title" data-i18n="screenshots.title">应用界面</h2>
+<p class="section-subtitle" data-i18n="screenshots.subtitle">简洁直观的密码管理体验</p>
 <div class="screenshot-container">
 <div class="screenshot-wrapper">
 <div class="screenshot-slide active" id="slide-1">
@@ -505,86 +533,86 @@ grid-template-columns: 1fr;
 
 <!-- 功能特性 -->
 <section class="features" id="features">
-<h2 class="section-title">核心功能</h2>
-<p class="section-subtitle">为安全而生，为便捷而设计</p>
+<h2 class="section-title" data-i18n="features.title">核心功能</h2>
+<p class="section-subtitle" data-i18n="features.subtitle">为安全而生，为便捷而设计</p>
 <div class="features-grid">
 <div class="feature-card">
 <div class="feature-icon">📸</div>
-<h3>截图识别</h3>
-<p>支持 Ctrl+V 粘贴截图，自动识别网站、用户名、密码等信息，快速填充表单。</p>
+<h3 data-i18n="features.screenshot.title">截图识别</h3>
+<p data-i18n="features.screenshot.desc">支持 Ctrl+V 粘贴截图，自动识别网站、用户名、密码等信息，快速填充表单。</p>
 </div>
 <div class="feature-card">
 <div class="feature-icon">🔐</div>
-<h3>AES-256 加密</h3>
-<p>采用银行级 AES-256-GCM 加密算法，所有密码数据加密存储，安全可靠。</p>
+<h3 data-i18n="features.encrypt.title">AES-256 加密</h3>
+<p data-i18n="features.encrypt.desc">采用银行级 AES-256-GCM 加密算法，所有密码数据加密存储，安全可靠。</p>
 </div>
 <div class="feature-card">
 <div class="feature-icon">📁</div>
-<h3>智能分类</h3>
-<p>支持自定义分类，CSV 导入时自动识别分类，让密码管理井井有条。</p>
+<h3 data-i18n="features.category.title">智能分类</h3>
+<p data-i18n="features.category.desc">支持自定义分类，CSV 导入时自动识别分类，让密码管理井井有条。</p>
 </div>
 <div class="feature-card">
 <div class="feature-icon">🔍</div>
-<h3>安全审计</h3>
-<p>实时检测弱密码、重复密码，计算安全评分，助您提升账户安全。</p>
+<h3 data-i18n="features.audit.title">安全审计</h3>
+<p data-i18n="features.audit.desc">实时检测弱密码、重复密码，计算安全评分，助您提升账户安全。</p>
 </div>
 <div class="feature-card">
 <div class="feature-icon">📋</div>
-<h3>剪贴板保护</h3>
-<p>复制密码后 30 秒自动清除剪贴板，防止密码意外泄露。</p>
+<h3 data-i18n="features.clipboard.title">剪贴板保护</h3>
+<p data-i18n="features.clipboard.desc">复制密码后 30 秒自动清除剪贴板，防止密码意外泄露。</p>
 </div>
 <div class="feature-card">
 <div class="feature-icon">🌙</div>
-<h3>深色模式</h3>
-<p>支持浅色/深色主题切换，夜间使用更舒适。</p>
+<h3 data-i18n="features.darkmode.title">深色模式</h3>
+<p data-i18n="features.darkmode.desc">支持浅色/深色主题切换，夜间使用更舒适。</p>
 </div>
 </div>
 </section>
 
 <!-- 安全保障 -->
 <section class="security" id="security">
-<h2 class="section-title">安全保障</h2>
-<p class="section-subtitle">您的隐私，我们守护</p>
+<h2 class="section-title" data-i18n="security.title">安全保障</h2>
+<p class="section-subtitle" data-i18n="security.subtitle">您的隐私，我们守护</p>
 <div class="security-grid">
 <div class="security-item">
 <div class="security-icon">💾</div>
-<h3>完全本地存储</h3>
-<p>所有数据仅存储在您的设备上，不上传任何服务器，不依赖云端服务。</p>
+<h3 data-i18n="security.local.title">完全本地存储</h3>
+<p data-i18n="security.local.desc">所有数据仅存储在您的设备上，不上传任何服务器，不依赖云端服务。</p>
 </div>
 <div class="security-item">
 <div class="security-icon">🚫</div>
-<h3>零数据收集</h3>
-<p>应用不收集任何个人信息、使用数据或设备信息。您的隐私绝对安全。</p>
+<h3 data-i18n="security.zero.title">零数据收集</h3>
+<p data-i18n="security.zero.desc">应用不收集任何个人信息、使用数据或设备信息。您的隐私绝对安全。</p>
 </div>
 <div class="security-item">
 <div class="security-icon">🔑</div>
-<h3>双重加密保护</h3>
-<p>主密码使用 PBKDF2 哈希（10万次迭代），数据使用 AES-256-GCM 加密。</p>
+<h3 data-i18n="security.encrypt.title">双重加密保护</h3>
+<p data-i18n="security.encrypt.desc">主密码使用 PBKDF2 哈希（10万次迭代），数据使用 AES-256-GCM 加密。</p>
 </div>
 </div>
 </section>
 
 <!-- 下载区域 -->
 <section class="download" id="download">
-<h2 class="section-title">立即下载</h2>
-<p class="section-subtitle">开始安全的密码管理之旅</p>
+<h2 class="section-title" data-i18n="download.title">立即下载</h2>
+<p class="section-subtitle" data-i18n="download.subtitle">开始安全的密码管理之旅</p>
 <div class="download-card">
-<h3>游刃 Windows 版</h3>
-<div class="version">v1.1.0 | 2026年5月更新</div>
-<a href="downloads/游刃.exe" class="btn btn-primary" id="downloadBtn" onclick="trackDownload()" download>
+<h3 data-i18n="download.version">游刃 Windows 版</h3>
+<div class="version" data-i18n="download.versionInfo">v1.1.0 | 2026年5月更新</div>
+<a href="downloads/游刃.exe" class="btn btn-primary" id="downloadBtn" onclick="trackDownload()" download data-i18n="download.btn">
 📥 下载 游刃.exe
 </a>
-<div class="size">文件大小：约 5MB | 支持 Windows 10/11</div>
+<div class="size" data-i18n="download.size">文件大小：约 5MB | 支持 Windows 10/11</div>
 
 <!-- 安装说明 -->
 <div class="install-guide" style="margin-top:24px;text-align:left;background:var(--bg);border-radius:8px;padding:16px;font-size:13px;color:var(--text-secondary);">
-<div style="font-weight:600;color:var(--text);margin-bottom:8px;">📖 安装说明</div>
+<div style="font-weight:600;color:var(--text);margin-bottom:8px;" data-i18n="download.guide.title">📖 安装说明</div>
 <ol style="margin:0;padding-left:20px;line-height:1.8;">
-<li>下载完成后，双击运行 <strong>游刃.exe</strong></li>
-<li>如果弹出"Windows 已保护你的电脑"提示，点击 <strong>更多信息</strong></li>
-<li>然后点击 <strong>仍要运行</strong> 即可启动应用</li>
+<li data-i18n="download.guide.step1">下载完成后，双击运行 <strong>游刃.exe</strong></li>
+<li data-i18n="download.guide.step2">如果弹出"Windows 已保护你的电脑"提示，点击 <strong>更多信息</strong></li>
+<li data-i18n="download.guide.step3">然后点击 <strong>仍要运行</strong> 即可启动应用</li>
 </ol>
-<div style="margin-top:8px;font-size:12px;color:var(--text-muted);">
+<div style="margin-top:8px;font-size:12px;color:var(--text-muted);" data-i18n="download.guide.tip">
 提示：本应用为纯本地绿色软件，无需安装，不联网，不收集任何数据。
 </div>
 </div>
@@ -592,15 +620,15 @@ grid-template-columns: 1fr;
 <div class="download-stats">
 <div class="stat-item">
 <div class="stat-value" id="downloadCount">0</div>
-<div class="stat-label">累计下载</div>
+<div class="stat-label" data-i18n="download.stats.downloads">累计下载</div>
 </div>
 <div class="stat-item">
 <div class="stat-value">100%</div>
-<div class="stat-label">免费使用</div>
+<div class="stat-label" data-i18n="download.stats.free">免费使用</div>
 </div>
 <div class="stat-item">
 <div class="stat-value">0</div>
-<div class="stat-label">数据上传</div>
+<div class="stat-label" data-i18n="download.stats.upload">数据上传</div>
 </div>
 </div>
 </div>
@@ -608,23 +636,23 @@ grid-template-columns: 1fr;
 
 <!-- 联系作者 -->
 <section class="security" id="contact">
-<h2 class="section-title">联系作者</h2>
-<p class="section-subtitle">有问题或建议？欢迎联系</p>
+<h2 class="section-title" data-i18n="contact.title">联系作者</h2>
+<p class="section-subtitle" data-i18n="contact.subtitle">有问题或建议？欢迎联系</p>
 <div class="security-grid">
 <div class="security-item">
 <div class="security-icon">📧</div>
-<h3>邮箱联系</h3>
+<h3 data-i18n="contact.email.title">邮箱联系</h3>
 <p><a href="mailto:seanwalter2026@gmail.com" style="color:var(--primary);text-decoration:none;">seanwalter2026@gmail.com</a></p>
 </div>
 <div class="security-item">
 <div class="security-icon">💻</div>
 <h3>GitHub</h3>
-<p><a href="https://github.com/Dream22180971/YouRenTool" target="_blank" style="color:var(--primary);text-decoration:none;">查看项目 & 提 Issue</a></p>
+<p><a href="https://github.com/Dream22180971/YouRenTool" target="_blank" style="color:var(--primary);text-decoration:none;" data-i18n="contact.github.desc">查看项目 & 提 Issue</a></p>
 </div>
 <div class="security-item">
 <div class="security-icon">💬</div>
-<h3>反馈问题</h3>
-<p><a href="https://github.com/Dream22180971/YouRenTool/issues" target="_blank" style="color:var(--primary);text-decoration:none;">提交 Bug 或 功能建议</a></p>
+<h3 data-i18n="contact.feedback.title">反馈问题</h3>
+<p><a href="https://github.com/Dream22180971/YouRenTool/issues" target="_blank" style="color:var(--primary);text-decoration:none;" data-i18n="contact.feedback.desc">提交 Bug 或 功能建议</a></p>
 </div>
 </div>
 </section>
@@ -633,17 +661,183 @@ grid-template-columns: 1fr;
 <footer class="footer">
 <div class="footer-links">
 <a href="https://github.com/Dream22180971/YouRenTool" target="_blank">GitHub</a>
-<a href="privacy.html">隐私政策</a>
-<a href="donate.html">支持我们</a>
-<a href="https://github.com/Dream22180971/YouRenTool/issues" target="_blank">反馈问题</a>
+<a href="privacy.html" data-i18n="footer.privacy">隐私政策</a>
+<a href="donate.html" data-i18n="footer.donate">支持我们</a>
+<a href="https://github.com/Dream22180971/YouRenTool/issues" target="_blank" data-i18n="footer.feedback">反馈问题</a>
 </div>
-<div class="footer-copyright">
+<div class="footer-copyright" data-i18n="footer.copyright">
 © 2026 游刃 YouRenTool. Made with ❤️ by 肖恩沃尔特
 </div>
 </footer>
 
 <script>
-// 截图轮播
+// ===== 多语言翻译字典 =====
+const translations = {
+zh: {
+// 导航
+'nav.screenshots': '应用界面',
+'nav.features': '功能特性',
+'nav.security': '安全保障',
+'nav.download': '下载',
+'nav.donate': '支持我们',
+'nav.contact': '联系作者',
+// Hero
+'hero.title': '游刃 - 本地密码管家',
+'hero.subtitle': '数据完全离线存储，不依赖云端。采用 AES-256 加密，保护您的每一个密码。',
+'hero.downloadBtn': '📥 下载 Windows 版',
+'hero.sourceBtn': '📦 查看源码',
+'hero.info': '支持 Windows 10+ | 当前版本 v1.1.0 | 文件大小约 5MB',
+// 截图
+'screenshots.title': '应用界面',
+'screenshots.subtitle': '简洁直观的密码管理体验',
+// 功能特性
+'features.title': '核心功能',
+'features.subtitle': '为安全而生，为便捷而设计',
+'features.screenshot.title': '截图识别',
+'features.screenshot.desc': '支持 Ctrl+V 粘贴截图，自动识别网站、用户名、密码等信息，快速填充表单。',
+'features.encrypt.title': 'AES-256 加密',
+'features.encrypt.desc': '采用银行级 AES-256-GCM 加密算法，所有密码数据加密存储，安全可靠。',
+'features.category.title': '智能分类',
+'features.category.desc': '支持自定义分类，CSV 导入时自动识别分类，让密码管理井井有条。',
+'features.audit.title': '安全审计',
+'features.audit.desc': '实时检测弱密码、重复密码，计算安全评分，助您提升账户安全。',
+'features.clipboard.title': '剪贴板保护',
+'features.clipboard.desc': '复制密码后 30 秒自动清除剪贴板，防止密码意外泄露。',
+'features.darkmode.title': '深色模式',
+'features.darkmode.desc': '支持浅色/深色主题切换，夜间使用更舒适。',
+// 安全保障
+'security.title': '安全保障',
+'security.subtitle': '您的隐私，我们守护',
+'security.local.title': '完全本地存储',
+'security.local.desc': '所有数据仅存储在您的设备上，不上传任何服务器，不依赖云端服务。',
+'security.zero.title': '零数据收集',
+'security.zero.desc': '应用不收集任何个人信息、使用数据或设备信息。您的隐私绝对安全。',
+'security.encrypt.title': '双重加密保护',
+'security.encrypt.desc': '主密码使用 PBKDF2 哈希（10万次迭代），数据使用 AES-256-GCM 加密。',
+// 下载
+'download.title': '立即下载',
+'download.subtitle': '开始安全的密码管理之旅',
+'download.version': '游刃 Windows 版',
+'download.versionInfo': 'v1.1.0 | 2026年5月更新',
+'download.btn': '📥 下载 游刃.exe',
+'download.size': '文件大小：约 5MB | 支持 Windows 10/11',
+'download.guide.title': '📖 安装说明',
+'download.guide.step1': '下载完成后，双击运行 <strong>游刃.exe</strong>',
+'download.guide.step2': '如果弹出"Windows 已保护你的电脑"提示，点击 <strong>更多信息</strong>',
+'download.guide.step3': '然后点击 <strong>仍要运行</strong> 即可启动应用',
+'download.guide.tip': '提示：本应用为纯本地绿色软件，无需安装，不联网，不收集任何数据。',
+'download.stats.downloads': '累计下载',
+'download.stats.free': '免费使用',
+'download.stats.upload': '数据上传',
+// 联系
+'contact.title': '联系作者',
+'contact.subtitle': '有问题或建议？欢迎联系',
+'contact.email.title': '邮箱联系',
+'contact.github.desc': '查看项目 & 提 Issue',
+'contact.feedback.title': '反馈问题',
+'contact.feedback.desc': '提交 Bug 或 功能建议',
+// 页脚
+'footer.privacy': '隐私政策',
+'footer.donate': '支持我们',
+'footer.feedback': '反馈问题',
+'footer.copyright': '© 2026 游刃 YouRenTool. Made with ❤️ by 肖恩沃尔特',
+},
+en: {
+// Navigation
+'nav.screenshots': 'Screenshots',
+'nav.features': 'Features',
+'nav.security': 'Security',
+'nav.download': 'Download',
+'nav.donate': 'Donate',
+'nav.contact': 'Contact',
+// Hero
+'hero.title': 'YouRen - Local Password Manager',
+'hero.subtitle': 'All data stored locally, no cloud dependency. AES-256 encryption protects every password.',
+'hero.downloadBtn': '📥 Download for Windows',
+'hero.sourceBtn': '📦 View Source',
+'hero.info': 'Windows 10+ | Version v1.1.0 | ~5MB',
+// Screenshots
+'screenshots.title': 'App Interface',
+'screenshots.subtitle': 'Simple and intuitive password management',
+// Features
+'features.title': 'Core Features',
+'features.subtitle': 'Built for security, designed for convenience',
+'features.screenshot.title': 'Screenshot Recognition',
+'features.screenshot.desc': 'Ctrl+V to paste screenshots, auto-detect websites, usernames, and passwords for quick form filling.',
+'features.encrypt.title': 'AES-256 Encryption',
+'features.encrypt.desc': 'Bank-grade AES-256-GCM encryption algorithm. All password data encrypted and stored securely.',
+'features.category.title': 'Smart Categories',
+'features.category.desc': 'Custom categories with auto-detection during CSV import. Keep your passwords organized.',
+'features.audit.title': 'Security Audit',
+'features.audit.desc': 'Real-time detection of weak and duplicate passwords. Security scoring to improve account safety.',
+'features.clipboard.title': 'Clipboard Protection',
+'features.clipboard.desc': 'Auto-clear clipboard 30 seconds after copying passwords. Prevent accidental leaks.',
+'features.darkmode.title': 'Dark Mode',
+'features.darkmode.desc': 'Light/dark theme toggle for comfortable use at night.',
+// Security
+'security.title': 'Security',
+'security.subtitle': 'Your privacy, our mission',
+'security.local.title': '100% Local Storage',
+'security.local.desc': 'All data stored only on your device. No servers, no cloud services.',
+'security.zero.title': 'Zero Data Collection',
+'security.zero.desc': 'No personal info, usage data, or device info collected. Your privacy is absolute.',
+'security.encrypt.title': 'Dual Encryption',
+'security.encrypt.desc': 'PBKDF2 hashing (100k iterations) for master password, AES-256-GCM for data encryption.',
+// Download
+'download.title': 'Download Now',
+'download.subtitle': 'Start your secure password management journey',
+'download.version': 'YouRen for Windows',
+'download.versionInfo': 'v1.1.0 | Updated May 2026',
+'download.btn': '📥 Download YouRen.exe',
+'download.size': 'Size: ~5MB | Windows 10/11',
+'download.guide.title': '📖 Installation Guide',
+'download.guide.step1': 'After download, double-click <strong>YouRen.exe</strong>',
+'download.guide.step2': 'If Windows protection prompt appears, click <strong>More info</strong>',
+'download.guide.step3': 'Then click <strong>Run anyway</strong> to start the app',
+'download.guide.tip': 'Note: This is a portable app. No installation, no internet, no data collection.',
+'download.stats.downloads': 'Total Downloads',
+'download.stats.free': '100% Free',
+'download.stats.upload': 'Data Upload',
+// Contact
+'contact.title': 'Contact',
+'contact.subtitle': 'Questions or suggestions? Feel free to reach out',
+'contact.email.title': 'Email',
+'contact.github.desc': 'View Project & Issues',
+'contact.feedback.title': 'Feedback',
+'contact.feedback.desc': 'Report Bugs or Request Features',
+// Footer
+'footer.privacy': 'Privacy Policy',
+'footer.donate': 'Donate',
+'footer.feedback': 'Feedback',
+'footer.copyright': '© 2026 YouRenTool. Made with ❤️ by Sean Walter',
+}
+};
+
+// ===== 语言切换逻辑 =====
+let currentLang = localStorage.getItem('youren-lang') || 'zh';
+
+function setLang(lang) {
+currentLang = lang;
+localStorage.setItem('youren-lang', lang);
+document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+document.getElementById('langText').textContent = lang === 'zh' ? 'EN' : '中';
+// 更新所有带 data-i18n 属性的元素
+document.querySelectorAll('[data-i18n]').forEach(el => {
+const key = el.getAttribute('data-i18n');
+if (translations[lang] && translations[lang][key]) {
+el.innerHTML = translations[lang][key];
+}
+});
+}
+
+function toggleLang() {
+setLang(currentLang === 'zh' ? 'en' : 'zh');
+}
+
+// 初始化语言
+setLang(currentLang);
+
+// ===== 截图轮播 =====
 let currentSlide = 1;
 const totalSlides = 4;
 
