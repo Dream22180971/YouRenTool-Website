@@ -13,7 +13,7 @@
 
 ---
 
-## 这个仓库做什么
+## 🎯 这个仓库做什么
 
 这里放的是游刃对外产品官网，而不是密码管理器本体。
 
@@ -21,13 +21,13 @@
 
 ---
 
-## 在线地址
+## 🌐 在线地址
 
 **https://youren.seanwalter.top**
 
 ---
 
-## 5 分钟快速开始
+## ⚡ 5 分钟快速开始
 
 ```bash
 git clone https://github.com/Dream22180971/YouRenTool-Website.git
@@ -42,7 +42,7 @@ python -m http.server 8080
 
 ---
 
-## 这里包含什么
+## ✨ 这里包含什么
 
 - 产品 Landing Page
 - 中英文文案
@@ -53,7 +53,7 @@ python -m http.server 8080
 
 ---
 
-## 相关仓库
+## 🔗 相关仓库
 
 真正的桌面密码管理器代码在：
 
@@ -61,7 +61,7 @@ python -m http.server 8080
 
 ---
 
-## 页面目标
+## 🎨 页面目标
 
 官网应该让用户很快回答三个问题：
 
