@@ -1,34 +1,76 @@
-The bilingual product site for YouRen, a privacy-first local password manager. / 游刃本地密码管家的中英文产品官网。
+<div align="center">
 
-<!-- README-V2-BILINGUAL -->
+# YouRen Product Website
 
-# YouRenTool-Website
+**The bilingual product site for YouRen, a privacy-first local password manager.**
 
-> **EN:** The bilingual product site for YouRen, a privacy-first local password manager.  
-> **中文：** 游刃本地密码管家的中英文产品官网。
+[English](./README.md) | [简体中文](./README.zh-CN.md)
 
-## Demo / 演示
+[![Live](https://img.shields.io/badge/LIVE-youren.seanwalter.top-165DFF?style=for-the-badge)](https://youren.seanwalter.top)
+[![Product](https://img.shields.io/badge/PRODUCT-YouRen-111827?style=for-the-badge)](https://github.com/Dream22180971/YouRenTool)
 
-Open `index.html` locally or visit the deployed product site. / 可直接打开 `index.html`，或访问线上产品站。
+</div>
 
-## Quick Start / 5 分钟快速开始
+---
+
+## Purpose
+
+This repository contains the public-facing website for YouRen.
+
+It is intentionally separate from the desktop application so product messaging, privacy explanations and download guidance can evolve independently.
+
+---
+
+## Live Site
+
+**https://youren.seanwalter.top**
+
+---
+
+## Quick Start
 
 ```bash
 git clone https://github.com/Dream22180971/YouRenTool-Website.git
 cd YouRenTool-Website
+
 python -m http.server 8080
-# open http://localhost:8080
 ```
 
-> **EN:** The commands above are intentionally kept short: clone, install, run. Project-specific configuration and advanced usage stay in the detailed documentation below.  
-> **中文：** 上面的命令刻意保持最短路径：克隆、安装、运行。项目特定配置与高级用法继续保留在下方详细文档中。
+Open `http://localhost:8080`.
 
-## Why this project / 为什么做这个项目
-
-**EN:** This repository is built around one concrete problem and aims to be understandable, runnable and useful before becoming complex.
-
-**中文：** 这个仓库围绕一个明确问题构建，优先做到易理解、能运行、真正有用，再逐步增加复杂能力。
+The main site is static-first, so a full frontend build toolchain is not required for basic local preview.
 
 ---
 
-<!-- ORIGINAL-DOCS -->
+## What lives here
+
+- product landing page
+- bilingual copy
+- privacy messaging
+- download guidance
+- screenshots / product explanation
+- lightweight web-side integrations
+
+---
+
+## Related Repository
+
+[YouRenTool](https://github.com/Dream22180971/YouRenTool) contains the desktop password manager itself.
+
+---
+
+## Design Principle
+
+The website should answer three questions quickly:
+
+1. What is YouRen?
+2. Why is local-first useful?
+3. How do I download or inspect the project?
+
+---
+
+<div align="center">
+
+**The website explains the promise. The desktop app keeps it.**
+
+</div>
