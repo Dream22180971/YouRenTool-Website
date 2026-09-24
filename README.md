@@ -13,7 +13,7 @@
 
 ---
 
-## Purpose
+## 🎯 Purpose
 
 This repository contains the public-facing website for YouRen.
 
@@ -21,13 +21,13 @@ It is intentionally separate from the desktop application so product messaging, 
 
 ---
 
-## Live Site
+## 🌐 Live Site
 
 **https://youren.seanwalter.top**
 
 ---
 
-## Quick Start
+## ⚡ Quick Start
 
 ```bash
 git clone https://github.com/Dream22180971/YouRenTool-Website.git
@@ -42,7 +42,7 @@ The main site is static-first, so a full frontend build toolchain is not require
 
 ---
 
-## What lives here
+## ✨ What lives here
 
 - product landing page
 - bilingual copy
@@ -53,13 +53,13 @@ The main site is static-first, so a full frontend build toolchain is not require
 
 ---
 
-## Related Repository
+## 🔗 Related Repository
 
 [YouRenTool](https://github.com/Dream22180971/YouRenTool) contains the desktop password manager itself.
 
 ---
 
-## Design Principle
+## 🎨 Design Principle
 
 The website should answer three questions quickly:
 
